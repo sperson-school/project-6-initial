@@ -36,7 +36,7 @@ public class DictionaryReference {
         // Implementation to read the dictionary file and populate the 'dictionary' map
 
         InputStream inputStream = DictionaryReference.class.getClassLoader()
-                        .getResourceAsStream("dictionary.json");
+                .getResourceAsStream("dictionary.json");
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
@@ -45,11 +45,11 @@ public class DictionaryReference {
         stopWatch.stop();
         long milliseconds = stopWatch.getLastTaskTimeMillis();
         String message = new StringBuilder().append("Dictionary created with ")
-                                            .append(dictionary.size())
-                                            .append(" entries in ")
-                                            .append(milliseconds)
-                                            .append("ms")
-                                            .toString();
+                .append(dictionary.size())
+                .append(" entries in ")
+                .append(milliseconds)
+                .append("ms")
+                .toString();
         logger.info(message);
     }
 }
