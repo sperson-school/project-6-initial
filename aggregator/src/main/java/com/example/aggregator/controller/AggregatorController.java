@@ -36,6 +36,11 @@ public class AggregatorController {
         return aggregatorService.getDefinitionFor(word);
     }
 
+    @GetMapping("/getAllPalindromes")
+    public List<Entry> getAllPalindromes() {
+        return aggregatorService.getAllPalindromes();
+    }
+
     @GetMapping("/getWordsThatContainSuccessiveLettersAndStarsWith/{chars}")
     public List<Entry> getWordsThatContainSuccessiveLettersAndStartsWith(@PathVariable String chars) {
 

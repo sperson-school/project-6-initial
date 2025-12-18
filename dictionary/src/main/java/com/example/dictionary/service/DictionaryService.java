@@ -37,6 +37,18 @@ public class DictionaryService {
                 .toList();
     }
 
+    public List<Entry> getWordsEndingWith(String value) {
+
+        return DictionaryReference.getDictionary()
+                .entrySet()
+                .stream()
+                .filter(entry -> entry.getKey()
+                        .endsWith(value))
+                .sorted(Map.Entry.comparingByKey(Comparator.naturalOrder()))
+                .map(entry -> new Entry(entry.getKey(), entry.getValue()))
+                .toList();
+    }
+
     public List<Entry> getWordsThatContain(String value) {
 
         return DictionaryReference.getDictionary()
